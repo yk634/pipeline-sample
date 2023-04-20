@@ -1,0 +1,10 @@
+shared:
+  image: node:16
+
+jobs:
+  main:
+    requires: [ ~pr, ~commit ]
+    annotations: 
+       screwdriver.cd/buildPeriodically: H * * * *
+    steps: 
+      - test: echo test
